@@ -41,7 +41,7 @@
                 <input value="Пароль">
                 <br>
                 <button class="loginButton">Войти</button>
-                <a href="clearpage.html" style="margin: 10;">Регистрация</a>
+                <a href="registration.html" style="margin: 10;">Регистрация</a>
             </div>
         </div>
         <ul class="menu-bar">

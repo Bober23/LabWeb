@@ -34,7 +34,7 @@
                 <input value="Пароль">
                 <br>
                 <button class="loginButton">Войти</button>
-                <a href="clearpage.html" style="margin: 10;">Регистрация</a>
+                <a href="registration.html" style="margin: 10;">Регистрация</a>
             </div>
         </div>
         <ul class="menu-bar">
@@ -51,13 +51,12 @@
                 <a href="longtours.php">Многодневные туры<br></a>
                 <a href="contacts.html">Контакты<br></a>
                 <a href="howtobuy.html">Как купить<br></a>
-                <div class="searchDiv">
-                    <form name="searchForm" method="post" action="search.php">
-                        <input type="search" name="search_q"/></br>
-                        </br>
-                        <input type="submit" value="Поиск"/></br>
-                    </form>
-                </div>
+                <br>
+                <form name="searchForm" method="post" action="search.php">
+                    <input class="searchInput" type="search" name="search_q"/></br>
+                    <input class="searchInput" type="submit" value="Поиск"/></br>
+                    
+                </form>
             </div>
             <div class="textDiv">
                 <p>
