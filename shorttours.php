@@ -31,8 +31,8 @@
                 <a href="index.php">Главная<br></a>
                 <a href="shorttours.php">Одноневные туры<br></a>
                 <a href="longtours.php">Многодневные туры<br></a>
-                <a href="contacts.html">Контакты<br></a>
-                <a href="howtobuy.html">Как купить<br></a>
+                <a href="contacts.php">Контакты<br></a>
+                <a href="howtobuy.php">Как купить<br></a>
                 <br>
                 <form name="searchForm" method="post" action="search.php">
                     <input class="searchInput" type="search" name="search_q"/></br>

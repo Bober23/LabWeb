@@ -31,8 +31,8 @@
                 <a href="index.php">Главная<br></a>
                 <a href="shorttours.php">Одноневные туры<br></a>
                 <a href="longtours.php">Многодневные туры<br></a>
-                <a href="contacts.html">Контакты<br></a>
-                <a href="howtobuy.html">Как купить<br></a>
+                <a href="contacts.php">Контакты<br></a>
+                <a href="howtobuy.php">Как купить<br></a>
             </div>
             <div class="textDiv">
                 <p>
