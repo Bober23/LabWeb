@@ -5,10 +5,21 @@
 }
 .headerDiv{
     background-color: darkgreen;
-    display: flex;
+    display:flex;
+    flex-direction: row;
     justify-content: space-around;
 }
-
+.searchInput{
+    border: 2px solid black;
+}
+.nameDiv{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background-color: #277514;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 30px;
+}
 
 .leftMenu{
     display: inline-block;
@@ -23,6 +34,7 @@
 }
 .cardGrid{
     display: grid;
+    grid-template-rows: max-content;
     grid-template-columns: repeat(3,1fr);
 }
 
