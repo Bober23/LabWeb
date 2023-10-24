@@ -1,0 +1,77 @@
+.card {
+  width: 420px;
+  height: max-content;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  border-radius: 4px;
+  transition: 0.2s;
+  position: relative;
+  border-color: #414141;
+  margin: 10px
+}
+.cardPrice{
+    display: flex;
+    justify-content: flex-start;
+}
+.tourPrice{
+    margin: 2;
+    margin-bottom: 5;
+    align-self: flex-end;
+}
+.cardTop {
+  flex: 0 0 200px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cardImage {
+  display: block;
+  position: absolute;
+  padding: 5;
+  width: 100%;
+  height: 100%;
+  object-fit:contain;
+}
+
+.cardBottom {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+
+.cardTitle {
+  display: block;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 150%;
+  color: #414141;
+  margin-bottom: 0;
+}
+.cardButton {
+  display: block;
+  margin: 10px;
+  font-weight: 400;
+  font-size: 17px;
+  color: #70c05b;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #70c05b;
+  border-radius: 4px;
+  cursor: pointer; 
+  margin-top: auto; 
+}
+
+.cardButton:hover {
+  border: 1px solid #277514;
+  background-color: #277514;
+  color: #fff;
+}
+h5{
+    color: gray;
+    margin: 0;
+    padding: 0;
+}

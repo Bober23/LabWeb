@@ -1,0 +1,29 @@
+h3{
+    text-align: justify;
+}
+input{
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding: 5px;
+    border: 1px;
+}
+a{
+    margin: 10px;
+}
+.footerText{
+    color: f8f8f8;
+}
+.loginButton{
+    border-radius: 15px;
+    border: 0;
+    zoom: 120%;
+}
+.headerH1{
+    text-align: center;
+    zoom: 130%;
+    color: white;
+}
+.headerH3{
+    text-align: center;
+    color: white
+}

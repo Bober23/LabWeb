@@ -1,0 +1,28 @@
+.standartDiv{
+    background-color: #f8f8f8;
+    display: flex;
+    justify-content: flex-start;
+}
+.headerDiv{
+    background-color: darkgreen;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.leftMenu{
+    display: inline-block;
+    backdrop-filter: blur(10px);
+    padding: 1%;
+    margin-top: 10px;
+    z-index: 0;
+}
+.textDiv{
+    margin: 10px;
+    margin-top: 0px;
+}
+.cardGrid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+
