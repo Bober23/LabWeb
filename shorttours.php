@@ -1,7 +1,7 @@
 <?php
     $db = new PDO("mysql:host=localhost;dbname=TouristDB","root","boberman");
     $info = [];
-    if ($query = $db -> query("SELECT * FROM tours")) {
+    if ($query = $db -> query("SELECT * FROM tours WHERE category = 'short'")) {
         $info = $query->fetchAll(PDO::FETCH_ASSOC);
     }
     else {
@@ -57,21 +57,21 @@
                         <?php foreach ($info as $data) : ?>
                             <div class="card">
                                 <div class="cardTop">
-                                <a href="clearpage.html">
-                                    <img class="cardImage" src="<?= $data['image']; ?>" alt="Сергиев Посад"/>
-                                </a>
+                                    <a href="clearpage.html">
+                                        <img class="cardImage" src="<?= $data['image']; ?>" alt="Сергиев Посад"/>
+                                    </a>
                                 </div>
-                                <div class="cardBottom">
-                                    <h3 class="cardTitle">
+                                <h3 class="cardTitle">
                                         <?= $data['name']; ?>
-                                    </h3>
-                                    <h5>Время в пути: <?=$data['lengthtime'];?>ч </h5>
-                                    <h5>Расстояние: <?=$data['length'];?>км</h5>
-                                    <h5>Свободных мест: <?=$data['available'];?></h5>
+                                </h3>
+                                <div class="cardBottom">
                                     <div class="cardPrice">
                                         <h3 class="tourPrice"><?=$data['price'];?></h3>
                                         <h5 class="tourPrice">руб.</h5>
                                     </div>  
+                                    <h5>Свободных мест: <?=$data['available'];?></h5>
+                                    <h5>Расстояние: <?=$data['length'];?>км</h5>
+                                    <h5>Время в пути: <?=$data['lengthtime'];?>ч </h5>
                                 </div>
                                 <button onclick="document.location = 'clearpage.html'" class="cardButton">Подробнее</button>
                             </div>
