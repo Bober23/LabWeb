@@ -1,7 +1,7 @@
 <?php
     $db = new PDO("mysql:host=localhost;dbname=TouristDB","root","boberman");
     $info = [];
-    if ($query = $db -> query("SELECT * FROM tours WHERE category = 'short'")) {
+    if ($query = $db -> query("SELECT * FROM tours WHERE category = 'long'")) {
         $info = $query->fetchAll(PDO::FETCH_ASSOC);
     }
     else {
@@ -11,7 +11,7 @@
 <html>
     <head>
         <title>
-            Однодневные туры
+            Многодневные туры
         </title>
         <link href="styles/div.css" rel="stylesheet" />
         <link href="styles/text.css" rel="stylesheet" />
@@ -39,22 +39,22 @@
         </div>
         <ul class="menu-bar">
             <li onclick="document.location='index.html'">Главная</li>
-            <li onclick="document.location='longtours.php'">Многодневные туры</li>
+            <li onclick="document.location='shorttours.php'">Однодневные туры</li>
             <li onclick="document.location='contacts.html'">Контакты</li>
             <li onclick="document.location='howtobuy.html'">Как купить</li>
         </ul>
         <div class="standartDiv">
             <div class="leftMenu">
                 <a href="index.html">Главная<br></a>
-                <a href="longtours.php">Многодневные туры<br></a>
+                <a href="shorttours.php">Однодневные туры<br></a>
                 <a href="contacts.html">Контакты<br></a>
                 <a href="howtobuy.html">Как купить<br></a>
             </div>
             <div class="textDiv">
                 <p>
-                    <h1>Каталог однодневных туров</h1>
+                    <h1>Каталог многодневных туров</h1>
                     <div class="cardGrid">
-                        <?php foreach ($info as $data) : ?>
+                    <?php foreach ($info as $data) : ?>
                             <div class="card">
                                 <div class="cardTop">
                                     <a href="clearpage.html">
@@ -71,13 +71,12 @@
                                     </div>  
                                     <h5>Свободных мест: <?=$data['available'];?></h5>
                                     <h5>Расстояние: <?=$data['length'];?>км</h5>
-                                    <h5>Время в пути: <?=$data['lengthtime'];?>ч </h5>
+                                    <h5>Время в пути: <?=$data['lengthtime'];?>д </h5>
                                 </div>
                                 <button onclick="document.location = 'clearpage.html'" class="cardButton">Подробнее</button>
                             </div>
                         <?php endforeach; ?>
                     </div>
-
                 </p>
             </div>
         </div>
