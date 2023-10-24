@@ -1,4 +1,9 @@
 <?php
+    if (session_id() == '') {
+        session_start();
+    }
+?>
+<?php
     $db = new PDO("mysql:host=localhost;dbname=TouristDB","root","boberman");
     $info = [];
     if ($query = $db -> query("SELECT * FROM tours WHERE category = 'long'")) {
@@ -20,33 +25,10 @@
         <link href="styles/menu.css" rel="stylesheet"/>
     </head>
     <body>
-        <div class="headerDiv">
-            <div>
-                <img src = "res/logo.png" style="background-color: white; margin-top: 10px; margin-bottom: 10px; zoom: 130%; border: 5px; border-radius: 20px; padding: 5;" alt = "logo">
-            </div>
-            <div>
-                <h1 style="text-align: center; zoom: 130%;color: white;">Золотая середина</h1>
-                <h3 style="text-align: center; color: white;">Туристическое агенство</h3>
-            </div>
-            <div>
-                <input style="margin-top: 40px;" value="Логин">
-                <br>
-                <input value="Пароль">
-                <br>
-                <button class="loginButton">Войти</button>
-                <a href="registration.html" style="margin: 10;">Регистрация</a>
-            </div>
-        </div>
-        <ul class="menu-bar">
-            <li onclick="document.location='index.html'">Главная</li>
-            <li onclick="document.location='shorttours.php'">Однодневные туры</li>
-            <li onclick="document.location='longtours.php'">Многодневные туры</li>
-            <li onclick="document.location='contacts.html'">Контакты</li>
-            <li onclick="document.location='howtobuy.html'">Как купить</li>
-        </ul>
+    <?php include("includes/header.php"); ?>
         <div class="standartDiv">
             <div class="leftMenu">
-                <a href="index.html">Главная<br></a>
+                <a href="index.php">Главная<br></a>
                 <a href="shorttours.php">Одноневные туры<br></a>
                 <a href="longtours.php">Многодневные туры<br></a>
                 <a href="contacts.html">Контакты<br></a>
@@ -71,7 +53,6 @@
                                         <h3 class="tourPrice"><?=$data['price'];?></h3>
                                         <h5 class="tourPrice">руб.</h5>
                                     </div>  
-                                    <h5>ID: <?=$data['id'];?></h5>
                                     <h5>Свободных мест: <?=$data['available'];?></h5>
                                     <h5>Расстояние: <?=$data['length'];?>км</h5>
                                     <h5>Время в пути: <?=$data['lengthtime'];?>д </h5>
