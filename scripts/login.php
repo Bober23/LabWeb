@@ -15,6 +15,8 @@
         $_SESSION['username'] = $username;
         header("Location: http://localhost/index.php");
     } else {
-        echo 'ne ok';
+        $_SESSION['incorrectpassword'] = true;
+        
+        header("Location: http://localhost/index.php");
     }
 ?>

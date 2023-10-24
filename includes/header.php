@@ -10,17 +10,26 @@
         <h1 class="headerH1">Золотая середина</h1>
         <h3 class="headerH3">Туристическое агенство</h3>
     </div>
+    <?php
+        if($_SESSION['incorrectpassword'] == true){
+            echo '<script type="text/javascript">
+            alert("Неправильный логин или пароль");
+            </script>';
+            unset($_SESSION['incorrectpassword']);
+        }
+    ?>
     <?php require_once 'scripts/fuctions.php'; if (isLogged()): ?>
-        <div>
+        <div class="nameDiv">
            <h2 style="color: white;"><?php echo $_SESSION['username']?></h2>
             <form action="scripts/logout.php" method="post">
                 <input type="submit" name="logoutbutton" value="Выйти">
             </form>
         </div>
     <?php else: ?>
-        <div>
+        <div style="margin-top:20px"> 
             <form method="post" action="scripts/login.php">
-                <h3 style="color: white;">Введите имя и пароль<h3>
+                <label style="color: white;">Введите имя и пароль<label>
+                <br>
                 <input type="text" name="username" id="username" required>
                 <br>
                 <input type="password" name="password" id="password" required>
