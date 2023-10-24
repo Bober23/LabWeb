@@ -8,6 +8,11 @@
     display: flex;
     justify-content: space-around;
 }
+.searchDiv{
+    padding: 10px;
+    background-color: darkgreen;
+    border-radius: 10px;
+}
 
 
 .leftMenu{

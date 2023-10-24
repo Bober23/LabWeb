@@ -1,8 +1,15 @@
 <?php
+    if (isset($_GET['id'])){
+        $id = $_GET['id'];
+    }
+    else{
+        print_r("error");
+    }
     $db = new PDO("mysql:host=localhost;dbname=TouristDB","root","boberman");
     $info = [];
-    if ($query = $db -> query("SELECT * FROM tours WHERE category = 'long'")) {
+    if ($query = $db -> query("SELECT * FROM tours")) {
         $info = $query->fetchAll(PDO::FETCH_ASSOC);
+        $data = $info [$id-1];
     }
     else {
         print_r($db -> errorInfo());
@@ -11,13 +18,13 @@
 <html>
     <head>
         <title>
-            Многодневные туры
+            Контакты
         </title>
         <link href="styles/div.css" rel="stylesheet" />
         <link href="styles/text.css" rel="stylesheet" />
         <link href="styles/table.css" rel="stylesheet" />
-        <link href="styles/card.css" rel="stylesheet" />
         <link href="styles/menu.css" rel="stylesheet"/>
+        <link href="styles/tourcard.css" rel="stylesheet"/>
     </head>
     <body>
         <div class="headerDiv">
@@ -25,8 +32,8 @@
                 <img src = "res/logo.png" style="background-color: white; margin-top: 10px; margin-bottom: 10px; zoom: 130%; border: 5px; border-radius: 20px; padding: 5;" alt = "logo">
             </div>
             <div>
-                <h1 style="text-align: center; zoom: 130%;color: white;">Золотая середина</h1>
-                <h3 style="text-align: center; color: white;">Туристическое агенство</h3>
+                <h1 class="headerH1">Золотая середина</h1>
+                <h3 class="headerH3">Туристическое агенство</h3>
             </div>
             <div>
                 <input style="margin-top: 40px;" value="Логин">
@@ -53,34 +60,21 @@
                 <a href="howtobuy.html">Как купить<br></a>
             </div>
             <div class="textDiv">
-                <p>
-                    <h1>Каталог многодневных туров</h1>
-                    <div class="cardGrid">
-                    <?php foreach ($info as $data) : ?>
-                            <div class="card">
-                                <div class="cardTop">
-                                    <a href="tourcard.php?id=<?php echo $id=$data['id'];?>">
-                                        <img class="cardImage" src="<?= $data['image']; ?>" alt="Картинка"/>
-                                    </a>
-                                </div>
-                                <h3 class="cardTitle">
-                                        <?= $data['name']; ?>
-                                </h3>
-                                <div class="cardBottom">
-                                    <div class="cardPrice">
-                                        <h3 class="tourPrice"><?=$data['price'];?></h3>
-                                        <h5 class="tourPrice">руб.</h5>
-                                    </div>  
-                                    <h5>ID: <?=$data['id'];?></h5>
-                                    <h5>Свободных мест: <?=$data['available'];?></h5>
-                                    <h5>Расстояние: <?=$data['length'];?>км</h5>
-                                    <h5>Время в пути: <?=$data['lengthtime'];?>д </h5>
-                                </div>
-                                <button onclick="document.location = 'tourcard.php?id=<?php echo $id=$data['id'];?>'" class="cardButton">Подробнее</button>
-                            </div>
-                        <?php endforeach; ?>
+                <h1><?=$data['name'];?></h1>
+                <div class="topDiv">
+                    <img class="picture" src="<?= $data['image']; ?>">
+                    <div class="parametersDiv">
+                        <h3 class = "paramText">Свободных мест: <?=$data['available'];?></h3>
+                        <h3 class = "paramText">Расстояние: <?=$data['length'];?>км</h3>
+                        <h3 class = "paramText">Время в пути: <?=$data['lengthtime'];?><?php if($data['category'] == 'short'){echo 'ч';} else{echo 'д';}?>   </h3>
+                        <h3 class = "paramText">Дата отправления <?=$data['date'];?> </h3>
+                        <div class = "buyDiv">
+                            <h2 class = "paramText">Cтоимость: <?=$data['price'];?>р </h2>
+                            <button class="buyButton">Забронировать</button>
+                        </div>
                     </div>
-                </p>
+                </div>
+                <p class="description"><?=$data['description'];?></p>
             </div>
         </div>
         <footer>

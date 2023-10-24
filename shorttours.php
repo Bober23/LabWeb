@@ -39,6 +39,7 @@
         </div>
         <ul class="menu-bar">
             <li onclick="document.location='index.html'">Главная</li>
+            <li onclick="document.location='shorttours.php'">Однодневные туры</li>
             <li onclick="document.location='longtours.php'">Многодневные туры</li>
             <li onclick="document.location='contacts.html'">Контакты</li>
             <li onclick="document.location='howtobuy.html'">Как купить</li>
@@ -46,9 +47,17 @@
         <div class="standartDiv">
             <div class="leftMenu">
                 <a href="index.html">Главная<br></a>
+                <a href="shorttours.php">Одноневные туры<br></a>
                 <a href="longtours.php">Многодневные туры<br></a>
                 <a href="contacts.html">Контакты<br></a>
                 <a href="howtobuy.html">Как купить<br></a>
+                <div class="searchDiv">
+                    <form name="searchForm" method="post" action="search.php">
+                        <input type="search" name="search_q"/></br>
+                        </br>
+                        <input type="submit" value="Поиск"/></br>
+                    </form>
+                </div>
             </div>
             <div class="textDiv">
                 <p>
@@ -57,8 +66,8 @@
                         <?php foreach ($info as $data) : ?>
                             <div class="card">
                                 <div class="cardTop">
-                                    <a href="clearpage.html">
-                                        <img class="cardImage" src="<?= $data['image']; ?>" alt="Сергиев Посад"/>
+                                <a href="tourcard.php?id=<?php echo $id=$data['id'];?>">
+                                        <img class="cardImage" src="<?= $data['image']; ?>" alt="Картинка"/>
                                     </a>
                                 </div>
                                 <h3 class="cardTitle">
@@ -73,7 +82,7 @@
                                     <h5>Расстояние: <?=$data['length'];?>км</h5>
                                     <h5>Время в пути: <?=$data['lengthtime'];?>ч </h5>
                                 </div>
-                                <button onclick="document.location = 'clearpage.html'" class="cardButton">Подробнее</button>
+                                <button onclick="document.location = 'tourcard.php?id=<?php echo $id=$data['id'];?>'" class="cardButton">Подробнее</button>
                             </div>
                         <?php endforeach; ?>
                     </div>
