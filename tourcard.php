@@ -12,9 +12,8 @@
     }
     $db = new PDO("mysql:host=localhost;dbname=TouristDB","root","boberman");
     $info = [];
-    if ($query = $db -> query("SELECT * FROM tours")) {
-        $info = $query->fetchAll(PDO::FETCH_ASSOC);
-        $data = $info [$id-1];
+    if ($query = $db -> query("SELECT * FROM tours WHERE id = '$id'")) {
+        $data = $query->fetch(PDO::FETCH_ASSOC);
     }
     else {
         print_r($db -> errorInfo());

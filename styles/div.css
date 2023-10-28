@@ -37,4 +37,13 @@
     grid-template-rows: max-content;
     grid-template-columns: repeat(3,1fr);
 }
-
+.cabForm{
+    padding: 0px;
+    margin: 0px;
+}
+.cabLogin{
+    color: white;
+    margin:5px;
+    padding: 0;
+    margin-top: 10px;
+}

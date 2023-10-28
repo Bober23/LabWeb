@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Запись на тур</title>
+    <link href="styles/registration.css" rel="stylesheet" />
+</head>
+<body>
+    <h1>Регистрация</h1>
+    <form method="post" action="scripts/order.php">
+        <label for="fio">ФИО:</label>
+        <input type="text" name="fio" id="fio" required>
+        
+        <label for="city">Город:</label>
+        <input type="text" name="city" id="city" required>
+
+        <label for="number">Количество человек:</label>
+        <input type="number" name="number" id="number" required>
+
+        <label for="telephone">Город:</label>
+        <input type="tel" name="telephone" id="telephone" required>
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required>
+
+        <label for="comment">Пароль:</label>
+        <input type="text" name="comment" id="comment" required>
+
+        <input type="submit" value="Записаться">
+    </form>
+</body>
+</html>

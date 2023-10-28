@@ -33,6 +33,12 @@
                 <a href="longtours.php">Многодневные туры<br></a>
                 <a href="contacts.php">Контакты<br></a>
                 <a href="howtobuy.php">Как купить<br></a>
+                <br>
+                <form name="searchForm" method="post" action="search.php">
+                    <input class="searchInput" type="search" name="search_q"/></br>
+                    <input class="searchInput" type="submit" value="Поиск"/></br>
+                    
+                </form>
             </div>
             <div class="textDiv">
                 <p>

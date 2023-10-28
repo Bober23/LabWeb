@@ -20,9 +20,12 @@
     ?>
     <?php require_once 'scripts/fuctions.php'; if (isLogged()): ?>
         <div class="nameDiv">
-           <h2 style="color: white;"><?php echo $_SESSION['username']?></h2>
-            <form action="scripts/logout.php" method="post">
+           <h2 class="cabLogin"><?php echo $_SESSION['username'];?></h2>
+            <form action="scripts/logout.php" method="post" class="cabForm">
                 <input type="submit" name="logoutbutton" value="Выйти">
+            </form>
+            <form action="feedback.html" method="post" class="cabForm">
+                <input type="submit" name="feedbackbutton" value="Оставить отзыв">
             </form>
         </div>
     <?php else: ?>
