@@ -1,15 +1,15 @@
+
 <?php
     if (session_id() == '') {
         session_start();
     }
-?>
-<?php
     $search_q=$_POST['search_q'];
     $search_q = trim($search_q);
     $search_q = strip_tags($search_q);
     $db = new PDO("mysql:host=localhost;dbname=TouristDB","root","boberman");
     $info = [];
-    if ($query = $db -> query("SELECT * FROM tours WHERE name LIKE '%$search_q%'")) {
+    $id = $_SESSION['userid'];
+    if ($query = $db -> query("SELECT * FROM tours JOIN orders ON orders.tourId = tours.id WHERE orders.userId = '$id'")) {
         $info = $query->fetchAll(PDO::FETCH_ASSOC);
     }
     else {
@@ -19,7 +19,7 @@
 <html>
     <head>
         <title>
-            Поиск
+            Корзина
         </title>
         <link href="styles/div.css" rel="stylesheet" />
         <link href="styles/text.css" rel="stylesheet" />
@@ -45,15 +45,13 @@
             </div>
             <div class="textDiv">
                 <p>
-                    <h1>Результаты поиска</h1>
+                    <h1>Моя корзина</h1>
                     <?php if (count($info) != 0): ?>
                         <div class="cardGrid">
                             <?php foreach ($info as $data) : ?>
                                 <div class="card">
                                     <div class="cardTop">
-                                    <a href="tourcard.php?id=<?php echo $id=$data['id'];?>">
-                                            <img class="cardImage" src="<?= $data['image']; ?>" alt="Картинка"/>
-                                        </a>
+                                    <img class="cardImage" src="<?= $data['image']; ?>" alt="Картинка"/>
                                     </div>
                                     <h3 class="cardTitle">
                                             <?= $data['name']; ?>
@@ -71,12 +69,15 @@
                                             <h5>Время в пути: <?=$data['lengthtime'];?>д </h5>
                                         <?php endif;?>
                                     </div>
-                                    <button onclick="document.location = 'tourcard.php?id=<?php echo $id=$data['id'];?>'" class="cardButton">Подробнее</button>
+                                    <form action="scripts/deletefromorder.php" method="post">
+                                        <input type="hidden" name="id" value="<?=$data['id'];?>">
+                                        <input class="cardButton" type="submit" name="deletebutton" value="Удалить из корзины">
+                                    </form>
                                 </div>
                             <?php endforeach; ?>
                         </div>
                     <?php else: ?>
-                        <h2>Ничего не найдено</h2>
+                        <h2>Корзина пуста</h2>
                     <?php endif; ?>
                 </p>
             </div>

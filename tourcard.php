@@ -51,7 +51,10 @@
                         <h3 class = "paramText">Дата отправления <?=$data['date'];?> </h3>
                         <div class = "buyDiv">
                             <h2 class = "paramText">Cтоимость: <?=$data['price'];?>р </h2>
-                            <button class="buyButton">Забронировать</button>
+                            <form action="scripts/addtoorder.php" method="post" >
+                                <input type="hidden" name="tourid" value="<?=$id;?>">
+                                <input type="submit" name="buyButton" class="buyButton" value="Забронировать">
+                            </form>
                         </div>
                     </div>
                 </div>

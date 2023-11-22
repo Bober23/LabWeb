@@ -12,9 +12,19 @@
 .searchInput{
     border: 2px solid black;
 }
+.image{
+    margin: 40px;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 25px;
+}
 .nameDiv{
+    display: flex;
+    flex-direction: row;
     margin-top: 15px;
     margin-bottom: 15px;
+    margin-right: 0px;
+
     background-color: #277514;
     padding-left: 15px;
     padding-right: 15px;

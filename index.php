@@ -42,13 +42,13 @@
 
                         <div class="mySlides fade">
                             <div class="numbertext">2 / 3</div>
-                            <img src="https://tourpics.hb.ru-msk.vkcs.cloud/dagestan.jpg" style="width:100%">
+                            <img src="https://tourpics.hb.ru-msk.vkcs.cloud/dagestan.jpg" class="carouselPicture">
                             <div class="text">Дагестан</div>
                         </div>
 
                         <div class="mySlides fade">
                             <div class="numbertext">3 / 3</div>
-                            <img src="https://tourpics.hb.ru-msk.vkcs.cloud/mirskiyzamok.jpg" style="width:100%">
+                            <img src="https://tourpics.hb.ru-msk.vkcs.cloud/mirskiyzamok.jpg" class="carouselPicture">
                             <div class="text">Мирский замок</div>
                         </div>
 
