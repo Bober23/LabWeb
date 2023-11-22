@@ -17,9 +17,11 @@
     if ($item['password'] == $password)  {
         $_SESSION['username'] = $username;
         header("Location: http://localhost/index.php");
+        exit();
     } else {
         $_SESSION['incorrectpassword'] = true;
         header("Location: http://localhost/index.php");
+        exit();
     }
 
 ?>

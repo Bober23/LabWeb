@@ -6,4 +6,5 @@
         unset($_SESSION['userid']);
         unset($_SESSION['correctregistration']);
         header("Location: http://localhost/index.php");
+        exit();
 ?>

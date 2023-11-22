@@ -10,6 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($query = $db -> query("INSERT INTO feedback (userId, feedback) VALUES ('$userId', '$feedback')")) {
         $info = $query->fetchAll(PDO::FETCH_ASSOC);
         header("Location: http://localhost/index.php");
+        exit();
     } else {
         echo $userId;
         echo $feedback;

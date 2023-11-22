@@ -15,9 +15,11 @@
         $_SESSION['username'] = $username;
         $_SESSION['userid'] = $item['id'];
         header("Location: http://localhost/index.php");
+        exit();
     } else {
         $_SESSION['incorrectpassword'] = true;
         
         header("Location: http://localhost/index.php");
+        exit();
     }
 ?>

@@ -11,6 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($query = $db -> query("DELETE FROM orders WHERE id = $id")) {
         $info = $query->fetchAll(PDO::FETCH_ASSOC);
         header("Location: http://localhost/order.php");
+        exit();
     } else {
         echo "Ошибка при удалении тура из корзины: " . $conn->error;
         echo $userId;
