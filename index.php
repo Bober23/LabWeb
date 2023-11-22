@@ -12,6 +12,7 @@
         <link href="styles/text.css" rel="stylesheet" />
         <link href="styles/table.css" rel="stylesheet" />
         <link href="styles/menu.css" rel="stylesheet"/>
+        <link href="styles/carousel.css" rel="stylesheet"/>
     </head>
     <body>
     <?php include("includes/header.php"); ?>
@@ -29,6 +30,43 @@
                     <h3>
                         Вы зашли на сайт официального туроператора по России «Золотая Середина». Здесь Вы можете записаться на автобусные экскурсии из Москвы и разных городов Подмосковья или заказать необходимый тур для своей группы на автобусе или поезде. Наш опыт организации экскурсий более 10 лет! Наличие проверенных экскурсоводов в Москве, Казани, Санкт-Петербурге, Пскове, Дивеево, Селигере и других исторических городах
                     </h3>
+                    
+                    <div class="slideshow-container">
+
+                        <!-- Full-width images with number and caption text -->
+                        <div class="mySlides fade">
+                            <div class="numbertext">1 / 3</div>
+                            <img src="https://tourpics.hb.ru-msk.vkcs.cloud/kareliya.jpg" class="carouselPicture">
+                            <div class="text">Карелия</div>
+                        </div>
+
+                        <div class="mySlides fade">
+                            <div class="numbertext">2 / 3</div>
+                            <img src="https://tourpics.hb.ru-msk.vkcs.cloud/dagestan.jpg" style="width:100%">
+                            <div class="text">Дагестан</div>
+                        </div>
+
+                        <div class="mySlides fade">
+                            <div class="numbertext">3 / 3</div>
+                            <img src="https://tourpics.hb.ru-msk.vkcs.cloud/mirskiyzamok.jpg" style="width:100%">
+                            <div class="text">Мирский замок</div>
+                        </div>
+
+                        <!-- Next and previous buttons -->
+                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                        </div>
+                        <br>
+
+                        <!-- The dots/circles -->
+                        <div style="text-align:center">
+                        <span class="dot" onclick="currentSlide(1)"></span>
+                        <span class="dot" onclick="currentSlide(2)"></span>
+                        <span class="dot" onclick="currentSlide(3)"></span>
+                    </div>
+                    <script src="carousel.js"></script>
+                    
+                    
                     <h3>
                         Вы можете быть уверены, что мы подберем для Вас лучший вариант транспорта, экскурсионной программы тура, питания в кафе, размещения в комфортном отеле и развлекательной программы для наших клиентов. По Вашей просьбе, мы заменим обед в программе на постный или вегетарианский, а влюбленных пар, во время многодневных экскурсий автобусом, разместим в номерах с 2-спальной кроватью.
                     </h3>
@@ -65,9 +103,7 @@
                     </ol>
                 </p>
             </div>
-            <div>
-                <img src="res/bus.jpg" style="max-width: 90%;margin: 20px;">
-            </div>
+            
         </div>
         <footer>
             <h3>Есть вопросы? Позвоните нам: 8 (495) 223-92-76</h3>
