@@ -51,10 +51,14 @@
                         <h3 class = "paramText">Дата отправления <?=$data['date'];?> </h3>
                         <div class = "buyDiv">
                             <h2 class = "paramText">Cтоимость: <?=$data['price'];?>р </h2>
+                            <?php if($_SESSION['userid']!=null):?>
                             <form action="scripts/addtoorder.php" method="post" >
                                 <input type="hidden" name="tourid" value="<?=$id;?>">
                                 <input type="submit" name="buyButton" class="buyButton" value="Забронировать">
                             </form>
+                            <?php else:?>
+                                <h2 class = "paramText">Войдите в аккаунт для покупки</h2>
+                            <?php endif?>
                         </div>
                     </div>
                 </div>

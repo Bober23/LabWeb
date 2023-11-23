@@ -76,10 +76,12 @@
                                 </div>
                             <?php endforeach; ?>
                         </div>
+                        <button class="cardButton">Заказать</button>
                     <?php else: ?>
                         <h2>Корзина пуста</h2>
                     <?php endif; ?>
                 </p>
+               
             </div>
         </div>
         <footer>
