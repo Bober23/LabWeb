@@ -12,9 +12,8 @@
     }
     $db = new PDO("mysql:host=localhost;dbname=TouristDB","root","boberman");
     $info = [];
-    if ($query = $db -> query("SELECT * FROM tours")) {
-        $info = $query->fetchAll(PDO::FETCH_ASSOC);
-        $data = $info [$id-1];
+    if ($query = $db -> query("SELECT * FROM tours WHERE id = '$id'")) {
+        $data = $query->fetch(PDO::FETCH_ASSOC);
     }
     else {
         print_r($db -> errorInfo());
@@ -52,7 +51,14 @@
                         <h3 class = "paramText">Дата отправления <?=$data['date'];?> </h3>
                         <div class = "buyDiv">
                             <h2 class = "paramText">Cтоимость: <?=$data['price'];?>р </h2>
-                            <button class="buyButton">Забронировать</button>
+                            <?php if($_SESSION['userid']!=null):?>
+                            <form action="scripts/addtoorder.php" method="post" >
+                                <input type="hidden" name="tourid" value="<?=$id;?>">
+                                <input type="submit" name="buyButton" class="buyButton" value="Забронировать">
+                            </form>
+                            <?php else:?>
+                                <h2 class = "paramText">Войдите в аккаунт для покупки</h2>
+                            <?php endif?>
                         </div>
                     </div>
                 </div>

@@ -12,9 +12,19 @@
 .searchInput{
     border: 2px solid black;
 }
+.image{
+    margin: 40px;
+    width: 50px;
+    height: 50px;
+    margin-bottom: 25px;
+}
 .nameDiv{
+    display: flex;
+    flex-direction: row;
     margin-top: 15px;
     margin-bottom: 15px;
+    margin-right: 0px;
+
     background-color: #277514;
     padding-left: 15px;
     padding-right: 15px;
@@ -30,6 +40,7 @@
 }
 .textDiv{
     margin: 10px;
+    margin-right: 50px;
     margin-top: 0px;
 }
 .cardGrid{
@@ -37,4 +48,13 @@
     grid-template-rows: max-content;
     grid-template-columns: repeat(3,1fr);
 }
-
+.cabForm{
+    padding: 0px;
+    margin: 0px;
+}
+.cabLogin{
+    color: white;
+    margin:5px;
+    padding: 0;
+    margin-top: 10px;
+}

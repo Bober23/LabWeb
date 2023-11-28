@@ -3,6 +3,11 @@
 <link href="styles/table.css" rel="stylesheet" />
 <link href="styles/menu.css" rel="stylesheet"/>
 <div class="headerDiv">
+<?php
+    if (session_id() == '') {
+        session_start();
+    }
+?> 
     <div>
         <img src = "res/logo.png" style="background-color: white; margin-top: 10px; margin-bottom: 10px; zoom: 130%; border: 5px; border-radius: 20px; padding: 5;" alt = "logo">
     </div>
@@ -20,10 +25,18 @@
     ?>
     <?php require_once 'scripts/fuctions.php'; if (isLogged()): ?>
         <div class="nameDiv">
-           <h2 style="color: white;"><?php echo $_SESSION['username']?></h2>
-            <form action="scripts/logout.php" method="post">
-                <input type="submit" name="logoutbutton" value="Выйти">
-            </form>
+            <div style="display:block;">
+                <h2 class="cabLogin"><?php echo $_SESSION['username'];?></h2>
+                <form action="scripts/logout.php" method="post" class="cabForm">
+                    <input type="submit" name="logoutbutton" value="Выйти">
+                </form>
+                <form action="feedback.html" method="post" class="cabForm">
+                    <input type="submit" name="feedbackbutton" value="Оставить отзыв">
+                </form>
+            </div>
+            <a href="order.php">
+                <img class="image" src="res/shopicon.png"> 
+            </a> 
         </div>
     <?php else: ?>
         <div style="margin-top:20px"> 

@@ -12,6 +12,7 @@
         <link href="styles/text.css" rel="stylesheet" />
         <link href="styles/table.css" rel="stylesheet" />
         <link href="styles/menu.css" rel="stylesheet"/>
+        <link href="styles/carousel.css" rel="stylesheet"/>
     </head>
     <body>
     <?php include("includes/header.php"); ?>
@@ -29,6 +30,43 @@
                     <h3>
                         Вы зашли на сайт официального туроператора по России «Золотая Середина». Здесь Вы можете записаться на автобусные экскурсии из Москвы и разных городов Подмосковья или заказать необходимый тур для своей группы на автобусе или поезде. Наш опыт организации экскурсий более 10 лет! Наличие проверенных экскурсоводов в Москве, Казани, Санкт-Петербурге, Пскове, Дивеево, Селигере и других исторических городах
                     </h3>
+                    
+                    <div class="slideshow-container">
+
+                        <!-- Full-width images with number and caption text -->
+                        <div class="mySlides fade">
+                            <div class="numbertext">1 / 3</div>
+                            <img src="https://tourpics.hb.ru-msk.vkcs.cloud/kareliya.jpg" class="carouselPicture">
+                            <div class="text">Карелия</div>
+                        </div>
+
+                        <div class="mySlides fade">
+                            <div class="numbertext">2 / 3</div>
+                            <img src="https://tourpics.hb.ru-msk.vkcs.cloud/dagestan.jpg" class="carouselPicture">
+                            <div class="text">Дагестан</div>
+                        </div>
+
+                        <div class="mySlides fade">
+                            <div class="numbertext">3 / 3</div>
+                            <img src="https://tourpics.hb.ru-msk.vkcs.cloud/mirskiyzamok.jpg" class="carouselPicture">
+                            <div class="text">Мирский замок</div>
+                        </div>
+
+                        <!-- Next and previous buttons -->
+                        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                        </div>
+                        <br>
+
+                        <!-- The dots/circles -->
+                        <div style="text-align:center">
+                        <span class="dot" onclick="currentSlide(1)"></span>
+                        <span class="dot" onclick="currentSlide(2)"></span>
+                        <span class="dot" onclick="currentSlide(3)"></span>
+                    </div>
+                    <script src="carousel.js"></script>
+                    
+                    
                     <h3>
                         Вы можете быть уверены, что мы подберем для Вас лучший вариант транспорта, экскурсионной программы тура, питания в кафе, размещения в комфортном отеле и развлекательной программы для наших клиентов. По Вашей просьбе, мы заменим обед в программе на постный или вегетарианский, а влюбленных пар, во время многодневных экскурсий автобусом, разместим в номерах с 2-спальной кроватью.
                     </h3>
@@ -49,54 +87,6 @@
                         <li>заказать прием Вашей группы в городах России</li>
                     </ul>
                     <h3>Информация о турах</h3>
-                    
-                    <table>
-                        <tr>
-                            <th colspan="4"></th>
-                            <th>Название</th>
-                            <th>Дальность</th>
-                            <th>Продолжительность</th>
-                            <th>Стоимость</th>
-                        </tr>
-                        <tr>
-                            <th colspan="4" rowspan="3">Одноневные туры</th>
-                            <td>Золотое кольцо: Владимир</td>
-                            <td>178км</td>
-                            <td>10ч</td>
-                            <td>3700р</td>
-                        </tr>
-                        <tr>
-                            <td>Золотое кольцо: Суздаль</td>
-                            <td>210км</td>
-                            <td>14ч</td>
-                            <td>4200р</td>
-                        </tr>
-                        <tr>
-                            <td>Муром</td>
-                            <td>260км</td>
-                            <td>16ч</td>
-                            <td>4700р</td>
-                        </tr>
-                        <tr>
-                            <th colspan="4" rowspan="3">Многодневные туры</th>
-                            <td>Золотое кольцо</td>
-                            <td>850км</td>
-                            <td>3д</td>
-                            <td>7700р</td>
-                        </tr>
-                        <tr>
-                            <td>Карелия</td>
-                            <td>2300км</td>
-                            <td>7д</td>
-                            <td>13000р</td>
-                        </tr>
-                        <tr>
-                            <td>Новгород-Чебоксары-Казань</td>
-                            <td>13000км</td>
-                            <td>5д</td>
-                            <td>10000р</td>
-                        </tr>
-                    </table>
                     <h3>Города отправления:</h3>
                     <ol>
                         <li>Москва</li>
@@ -113,9 +103,7 @@
                     </ol>
                 </p>
             </div>
-            <div>
-                <img src="res/bus.jpg" style="max-width: 90%;margin: 20px;">
-            </div>
+            
         </div>
         <footer>
             <h3>Есть вопросы? Позвоните нам: 8 (495) 223-92-76</h3>
