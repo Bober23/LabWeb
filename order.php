@@ -15,6 +15,7 @@
     else {
         print_r($db -> errorInfo());
     }
+    $sum = 0;
 ?>
 <html>
     <head>
@@ -73,9 +74,12 @@
                                         <input type="hidden" name="id" value="<?=$data['id'];?>">
                                         <input class="cardButton" type="submit" name="deletebutton" value="Удалить из корзины">
                                     </form>
+                                    <?php $sum+=$data['price'];?>
                                 </div>
                             <?php endforeach; ?>
                         </div>
+                        
+                        <h2>Стоимость заказа: <?=$sum;?> рублей</h2>
                         <button class="cardButton">Заказать</button>
                     <?php else: ?>
                         <h2>Корзина пуста</h2>
